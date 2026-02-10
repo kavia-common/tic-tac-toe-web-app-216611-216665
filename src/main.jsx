@@ -8,6 +8,7 @@ function mount() {
   /** Mounts the React application into the #root element. */
   const rootEl = document.getElementById('root');
   if (!rootEl) throw new Error('Root element #root not found');
+
   createRoot(rootEl).render(
     <React.StrictMode>
       <App />

@@ -5,9 +5,11 @@ function calculateWinner(squares) {
     [0, 1, 2],
     [3, 4, 5],
     [6, 7, 8],
+
     [0, 3, 6],
     [1, 4, 7],
     [2, 5, 8],
+
     [0, 4, 8],
     [2, 4, 6]
   ];
@@ -17,6 +19,7 @@ function calculateWinner(squares) {
       return { winner: squares[a], line: [a, b, c] };
     }
   }
+
   return { winner: null, line: null };
 }
 
@@ -81,6 +84,8 @@ export default function App() {
                 className={`square ${isWinning ? 'square--win' : ''}`}
                 onClick={() => handleSquareActivate(idx)}
                 onKeyDown={(e) => {
+                  // Buttons already activate on Enter/Space, but keep this to ensure consistent behavior
+                  // across environments and to prevent page scrolling on Space.
                   if (e.key === 'Enter' || e.key === ' ') {
                     e.preventDefault();
                     handleSquareActivate(idx);
@@ -101,6 +106,7 @@ export default function App() {
           <button type="button" className="reset" onClick={reset}>
             Reset game
           </button>
+
           <div className="legend" aria-label="Legend">
             <span className="pill pill--x">X</span>
             <span className="pill pill--o">O</span>

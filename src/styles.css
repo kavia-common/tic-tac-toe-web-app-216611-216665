@@ -22,7 +22,7 @@ body {
 body {
   margin: 0;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
-    Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';
   background: radial-gradient(1200px 800px at 50% 0%, #152443 0%, var(--bg) 55%);
   color: var(--text);
 }
@@ -87,6 +87,11 @@ body {
   border-color: rgba(255, 255, 255, 0.22);
 }
 
+.square:focus-visible {
+  outline: 3px solid rgba(96, 165, 250, 0.55);
+  outline-offset: 2px;
+}
+
 .square:disabled {
   cursor: not-allowed;
   opacity: 0.9;
@@ -117,6 +122,11 @@ body {
 
 .reset:hover {
   border-color: rgba(255, 255, 255, 0.22);
+}
+
+.reset:focus-visible {
+  outline: 3px solid rgba(96, 165, 250, 0.55);
+  outline-offset: 2px;
 }
 
 .legend {

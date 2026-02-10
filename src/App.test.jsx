@@ -5,5 +5,7 @@ import App from './App.jsx';
 
 test('renders game title', () => {
   render(<App />);
-  expect(screen.getByRole('heading', { name: /tic tac toe/i })).toBeInTheDocument();
+  expect(
+    screen.getByRole('heading', { name: /tic tac toe/i })
+  ).toBeInTheDocument();
 });
