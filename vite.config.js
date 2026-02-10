@@ -10,5 +10,12 @@ export default defineConfig({
   },
   preview: {
     port: 4173
+  },
+  // Vitest config co-located with Vite config.
+  // This enables `expect`, `test`, etc. globally and uses jsdom so React Testing Library works.
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: ['./src/test/setup.js']
   }
 });
